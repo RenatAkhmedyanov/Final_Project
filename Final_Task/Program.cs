@@ -13,7 +13,10 @@ Console.WriteLine();
 
 int secondArrayLength = GetSecondArrayLength(array);
 
-
+string?[] secondArray = GetSecondArray(array);
+Console.WriteLine();
+Console.Write("Новый массив: ");
+PrintArray(secondArray);
 
 
 string?[] GetArray(int size)
@@ -45,4 +48,19 @@ int GetSecondArrayLength(string?[] array)
         if (array[i]!.Length <= 3) count++;
     }
     return count;
+}
+
+string?[] GetSecondArray(string?[] array)
+{
+    string?[] secondArray = new string?[secondArrayLength];
+    int indexOfSecondArray = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i]!.Length <= 3)
+        {
+            secondArray[indexOfSecondArray] = array[i];
+            indexOfSecondArray++;
+        }
+    }
+    return secondArray;
 }
