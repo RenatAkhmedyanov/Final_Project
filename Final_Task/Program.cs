@@ -9,8 +9,6 @@ while (!uint.TryParse(Console.ReadLine()!, out size))
     Console.Write("Введите количество элементов исходного массива: ");
 }
 
-
-
 string?[] array = GetArray(size);
 Console.WriteLine();
 Console.Write("Полученный массив: ");
@@ -24,7 +22,6 @@ Console.WriteLine();
 Console.Write("Новый массив: ");
 PrintArray(secondArray);
 
-
 string?[] GetArray(uint size)
 {
     Console.WriteLine("Введите элементы массива:");
@@ -35,6 +32,7 @@ string?[] GetArray(uint size)
     }
     return array;
 }
+
 void PrintArray(string?[] array)
 {
     Console.Write("[");
