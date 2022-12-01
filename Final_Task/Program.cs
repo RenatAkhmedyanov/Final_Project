@@ -2,7 +2,13 @@
 
 Console.WriteLine();
 Console.Write("Введите количество элементов исходного массива: ");
-int size = int.Parse(Console.ReadLine()!);
+uint size;
+while (!uint.TryParse(Console.ReadLine()!, out size))
+{
+    Console.WriteLine("Неверный ввод! Необходимо ввести положительное число.");
+    Console.Write("Введите количество элементов исходного массива: ");
+}
+
 
 
 string?[] array = GetArray(size);
@@ -19,7 +25,7 @@ Console.Write("Новый массив: ");
 PrintArray(secondArray);
 
 
-string?[] GetArray(int size)
+string?[] GetArray(uint size)
 {
     Console.WriteLine("Введите элементы массива:");
     string?[] array = new string[size];
