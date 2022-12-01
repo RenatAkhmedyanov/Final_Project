@@ -9,6 +9,11 @@ string?[] array = GetArray(size);
 Console.WriteLine();
 Console.Write("Полученный массив: ");
 PrintArray(array);
+Console.WriteLine();
+
+int secondArrayLength = GetSecondArrayLength(array);
+
+
 
 
 string?[] GetArray(int size)
@@ -32,3 +37,12 @@ void PrintArray(string?[] array)
     Console.Write("]");
 }
 
+int GetSecondArrayLength(string?[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i]!.Length <= 3) count++;
+    }
+    return count;
+}
